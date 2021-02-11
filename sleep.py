@@ -11,5 +11,5 @@ sleep_t = min((abs(a-x), a) for a in times if a-x >=0)[1]
 sleep_to = start + (60*(sleep_t-x))
 while time() < sleep_to:
     sleep_for = (sleep_to - time())/2
-    print(f'{sleep_for}')
+    print(sleep_for)
     sleep(max(sleep_for, 1))
