@@ -16,4 +16,4 @@ curl -L 'https://c.ateb.com/8d8feb6dce7d4d598f753362d06d1e64/' \
   -H 'referer: https://www.weismarkets.com/' \
   -H 'accept-language: en-US,en;q=0.9' \
   -H 'sec-gpc: 1' \
-  --compressed
+  --compressed > weis1.html
