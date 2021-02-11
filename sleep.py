@@ -2,7 +2,7 @@ from time import time, sleep
 import sys
 
 times = [0, 15, 30, 45]
-x = sys.argv[1
+x = sys.argv[1]
 start = time()
 next_t = min((abs(a-x), a) for a in times)
 if next_t[0] < 3:
