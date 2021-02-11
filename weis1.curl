@@ -1,3 +1,4 @@
+curl -i google.com | grep "Date" | awk -F: '{print $3}' | xargs python sleep.py
 curl -L 'https://c.ateb.com/8d8feb6dce7d4d598f753362d06d1e64/' \
   -H 'authority: c.ateb.com' \
   -H 'pragma: no-cache' \
