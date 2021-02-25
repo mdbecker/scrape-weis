@@ -1,12 +1,69 @@
-<!DOCTYPE html>
 <html>
+
 <head>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./custom.css">
 </head>
+
 <body>
-<h1>Appointments Full</h1>
-<p>Hello, all appointment slots are currently full. Please close your browser window. Refreshing your current window will continue to lead to this Appointments Full message.<br>Please check back tomorrow for appointment availability. Please open a new browser window to reach the scheduler. When appointment slots are available they will be displayed.</p>
+    <script src="/chatbot/newrelic.js"></script>
+    <script src="/chatbot/webchat.js"></script>
+    <script src="/chatbot/adaptivecards.webchat-plugin.js"></script>
+    <script>
+        var botUUID = '3f647956b456425d9c12360db8e4fdb4';
+        var endpoint = 'https://endpoint-chat.ateb.com/df425c2e5d5e1084510b834c2fddcda8a459d7239c01d1766380e3d49fa7f936';
+
+        var settings = {
+            settings: {
+                'agentAvatarUrl': '',
+                'backgroundImageUrl': '',
+                'colorScheme': '#EB3123',
+                'designTemplate': 2,
+                'disableBranding': true,
+                'disableHtmlInput': false,
+                'disableInputAutofocus': false,
+                'disablePersistentHistory': false,
+                'disableTextInputSanitization': false,
+                'disableToggleButton': false,
+                'dynamicImageAspectRatio': false,
+                'enableConnectionStatusIndicator': true,
+                'enableFileUpload': true,
+                'enablePersistentMenu': false,
+                'enableSTT': false,
+                'enableStrictMessengerSync': false,
+                'enableTTS': false,
+                'enableTypingIndicator': true,
+                'getStartedButtonText': '',
+                'getStartedPayload': botUUID,
+                'getStartedText': 'Please assist with my appointment.',
+                'headerLogoUrl': './pharm-bot.png',
+                'inputPlaceholder': 'Type to me here.',
+                'messageDelay': 200,
+                'messageLogoUrl': './pharm-bot.png',
+                'persistentMenu': {
+                    'title': '',
+                    'menuItems': []
+                },
+                'startBehavior': 'injection',
+                'STTLanguage': '',
+                'title': 'Weis Pharmacy CareScheduler',
+                'userAvatarUrl': '',
+                'useSessionStorage': false,
+            }
+        };    
+        
+        if (typeof newrelic === 'object') {
+            newrelic.interaction()
+                .setAttribute('botId', botUUID)
+                .save();
+        }
+
+        initWebchat(endpoint, settings).then(webchat => {
+            window.cognigyWebchat = webchat;
+            webchat.open();
+        });
+    </script>
 </body>
+
 </html>
